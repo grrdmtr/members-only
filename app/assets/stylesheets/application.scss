@@ -15,3 +15,11 @@
  */
 
  @import "bulma";
+
+ .navbar-item>div {
+  align-items: center;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
