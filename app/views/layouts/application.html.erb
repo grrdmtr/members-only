@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"%>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -41,9 +42,21 @@
               <p class="control">
                 <%= link_to 'New Post', new_post_path, class: "button is-info is-inverted" %>
               </p>
+              <% if user_signed_in? %>
               <p class="control">
-                Sign Up
+                <%= link_to current_user.username, edit_user_registration_path, class: "button is-info"%>
               </p>
+              <p class="control">
+                <%= button_to("Logout", destroy_user_session_path, method: :delete, class:"button is-info") %>
+              </p>
+              <% else %>  
+              <p class="control">
+                <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+              </p>
+              <p class="control">
+                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
+              </p>
+              <% end %>
             </div>
           </div>
         </div>
