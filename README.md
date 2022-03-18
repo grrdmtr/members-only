@@ -3,6 +3,9 @@
 This project creates a secret social media platform where only authorized members can see who posted a ''secret''.
 This project is part of The Odin Project curriculum.
 
+# Live view
+
+https://calm-lowlands-02227.herokuapp.com/
 
 ## Built With
 
