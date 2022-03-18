@@ -1,16 +1,17 @@
 <div class="column is-half">
-  <%# <% if user_signed_in? %>
+  <% if user_signed_in? %>
   <article class="media box">
     <figure class="media-left">
       <p class="image is-64x64">
         <img src="https://bulma.io/images/placeholders/64x64.png">
       </p>
     </figure>
+
     <div class="media-content">
       <%= render 'posts/form' %>
     </div>
   </article>
-  <%# <% end %>
+  <% end %>
 
   <% @posts.each do | post | %>
     <div class="box">
