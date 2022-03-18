@@ -275,6 +275,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   better_errors (~> 2.9, >= 2.9.1)
