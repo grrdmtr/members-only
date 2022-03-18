@@ -21,24 +21,33 @@
           </figure>
         </div>
         <div class="media-content">
-          <div class="content">
-            <strong>@aleosha</strong><br />
-            <p><%= post.post %></p>
-          </div>
-            <% if user_signed_in? && current_user.id == post.user_id %>
-            <nav class="level">
-              <div class="level-left is-mobile">
-                <%= link_to post, class: "level-item" do %>
-                  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
-                <% end %>
-                <%= link_to edit_post_path(post), class: "level-item" do %>
-                  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                <% end %>
-                <%= button_to(post, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}) do %>
-                    <span class="icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
-                <% end %>
-              </div>
-            </nav>
+            <% if user_signed_in? %>
+              <nav class="level">
+                <div class="content">
+                    <strong><%= post.user.username %></strong><br />
+                    <p><%= post.post %></p>
+                </div>
+                <% if current_user.id == post.user_id %>
+                  <div class="level-left is-mobile">
+                    <%= link_to post, class: "level-item" do %>
+                      <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                    <% end %>
+                    <%= link_to edit_post_path(post), class: "level-item" do %>
+                      <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <% end %>
+                    <%= button_to(post, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}) do %>
+                        <span class="icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    <% end %>
+                  </div>
+                <% end %> 
+              </nav>
+            <% else %>
+              <nav class="level">
+                <div class="content">
+                  <strong>anonymous</strong><br />
+                  <p><%= post.post %></p>
+                </div>
+              </nav>
             <% end %>
         </div>
       </article>
