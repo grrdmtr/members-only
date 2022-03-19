@@ -15,7 +15,7 @@ https://calm-lowlands-02227.herokuapp.com/
 
 ##  Setup    <a name = "setup"></a>
 - Clone this project from github using
-- <code>$ git clone https://github.com/MkrtichSargsyan/Members-Only.git</code>
+- <code>$ git clone https://github.com/grrdmtr/members-only</code>
 - <code>cd members-only</code>
 - <code>$ bundle install</code>
 - <code>$ rails db:migrate</code>
